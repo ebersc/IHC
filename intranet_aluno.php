@@ -89,11 +89,35 @@
 	<!--</form>-->
 	<fieldset>
     	<div id="arquivos" name="arquivos">
+        <table>
         	<?php	
-				$query = "select a.fk_discipina, a.fk_aluno, d.id_disciplina, r.nome_arquivo, r.caminho
+				$query = "select a.fk_discipina, a.fk_aluno, d.id_disciplina, d.nome, r.nome_arquivo, r.caminho
 							from aula as a join disciplina as d on a.fk_discipina = d.id_disciplina
-    						join arquivo as r  on d.id_disciplina = r.fk_disciplina where a.fk_aluno = $id;"
+    						join arquivo as r on d.id_disciplina = r.fk_disciplina where a.fk_aluno = $id order by a.fk_discipina;";
+				$resultado=mysql_query($query,$conexao);
+				$cont = 0;
+				while($linha=mysql_fetch_array($resultado))
+				{
+					$disc[$cont] = $linha['fk_discipina'];
+					if($cont > 0 and $disc[$cont] != $disc[$cont - 1]){ 
 			?>
+            
+            <th><font color="#FF0000" style="font-size:24px"><?php echo $linha['nome'];?><br/></th>	
+            <?php
+					} else if($cont == 0){
+			?>
+            <th><font color="#FF0000" style="font-size:24px"><?php echo $linha['nome'];?><br/></th>
+            <?php
+					}
+			?>
+            <tr>
+				<td><a target="_blank" href="<?php echo $linha['caminho']?>"><?php echo $linha['nome_arquivo'];?></a></td>
+			</tr>
+			<?php
+				$cont++;
+				}
+			?>		
+		</table>
         </div>
     </fieldset>
 
