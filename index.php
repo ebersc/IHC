@@ -5,6 +5,7 @@
 <meta name="author" content="Diogo, Albert, Eberson e Raphael">
 <meta http-equiv="Content-Type" content="text/hmtl" charset="utf-8">
 <link rel="stylesheet" type="text/css" href="estilo.css">
+<link rel="shortcut icon" href="icone.ico" type="image/x-icon"/>
 </head>
 <body>
 <br>

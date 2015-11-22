@@ -3,6 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Altera Foto</title>
+<link rel="shortcut icon" href="icone.ico" type="image/x-icon"/>
 </head>
 <body>
 	<?php
@@ -25,8 +26,6 @@
 <!--    	<input type="hidden" name="MAX_FILE_SIZE" value="300000" /> <!-- Descomente essa tag somente se for limitar o tamanho do arquivo em bytes-->
     	<!-- O Nome do elemento input determina o nome da array $_FILES -->
     	Nova foto: <input name="userfile" type="file" accept="image/jpeg"/>
- 
-        <br/><input type="date" name="data" id="data" /><br/>
     	<input type="submit" value="Salvar" name="btnSalvar" id="btnSalvar"/>
 	</form>
     <?php
@@ -35,7 +34,7 @@
 		$uploaddir = 'images_users/'.$_SESSION['login'].".jpg";
 			
 		if (move_uploaded_file($_FILES['userfile']['tmp_name'], $uploaddir) && $_FILES['userfile']['type'] == "image/jpeg") {
-			echo "<script>alert('Foto alterada com sucesso enviado com sucesso.');</script>";
+			echo "<script>alert('Foto alterada com sucesso.');</script>";
 			header('location:intranet_aluno.php');
 		} else {
 			echo "<script>alert('Erro ao alterar a foto. Verifique se a imagem é um arquivo .JPG e tente novamente');</script>";

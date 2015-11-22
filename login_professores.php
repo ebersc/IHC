@@ -3,6 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Login Professores</title>
+<link rel="shortcut icon" href="icone.ico" type="image/x-icon"/>
 </head>
 
 <body>

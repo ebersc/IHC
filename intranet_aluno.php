@@ -4,6 +4,7 @@
 <title>Intranet Alunos</title>
 <meta http-equiv="Content Type" content="text/html" charset="utf-8">
 <link rel="stylesheet" type="text/css" href="loc.css">
+<link rel="shortcut icon" href="icone.ico" type="image/x-icon"/>
 </head>
 <?php
 	session_start();

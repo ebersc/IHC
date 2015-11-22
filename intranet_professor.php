@@ -3,6 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Intranet Professores</title>
+<link rel="shortcut icon" href="icone.ico" type="image/x-icon"/>
 </head>
 <body>
 <?php
@@ -28,12 +29,50 @@
 					if($cont > 0 and $disc[$cont] != $disc[$cont - 1]){ 
 			?>
             
-            <th><font color="#FF0000" style="font-size:24px"><?php echo $linha['nome'];?><br/></font></th>	
+            <th><font color="#FF0000" style="font-size:24px"><?php echo $linha['nome'];?><br/></font></th>
+            <th>
+            	<form enctype="multipart/form-data" action="" method="POST">
+                    Novo arquivo: <input name="userfile" type="file" />
+                    <input type="submit" value="Adicionar" name="btnAdd" id="btnAdd"/>
+                </form>
+                <?php
+					if(isset($_POST['btnAdd'])){
+						$arquivo  = basename($_FILES['userfile']['name']);
+						$uploaddir = 'files_prof/'.$_SESSION['id_prof'].'/'.$arquivo;
+						$query = "insert into arquivo (nome_arquivo, caminho, fk_professor, fk_disciplina) 
+						values ('$arquivo', '$uploaddir','$id','$disc[$cont]');";
+						if (move_uploaded_file($_FILES['userfile']['tmp_name'], $uploaddir)) {
+							echo "<script>alert('Arquivo enviado com sucesso.');</script>";
+							
+							header('location:intranet_professor.php');
+						} else {
+							echo "<script>alert('Erro ao enviar arquivo.');</script>";
+						}
+					}		
+                ?>
+            </th>	
             <?php
 					} else if($cont == 0){
 			?>
             <th><font color="#FF0000" style="font-size:24px"><?php echo $linha['nome'];?><br/></font></th>
-            <?php
+            <form enctype="multipart/form-data" action="" method="POST">
+                    Novo arquivo: <input name="userfile" type="file" />
+                    <input type="submit" value="Adicionar" name="btnAdd" id="btnAdd"/>
+                </form>
+                <?php
+					if(isset($_POST['btnAdd'])){
+						$arquivo  = basename($_FILES['userfile']['name']);
+						$uploaddir = 'files_prof/'.$_SESSION['id_prof'].'/'.$arquivo;
+						$query = "insert into arquivo (nome_arquivo, caminho, fk_professor, fk_disciplina) 
+						values ('$arquivo', '$uploaddir','$id','$disc[$cont]');";
+						if (move_uploaded_file($_FILES['userfile']['tmp_name'], $uploaddir)) {
+							echo "<script>alert('Arquivo enviado com sucesso.');</script>";
+							
+							header('location:intranet_professor.php');
+						} else {
+							echo "<script>alert('Erro ao enviar arquivo.');</script>";
+						}
+					}		
 					}
 			?>
             <tr>
@@ -58,8 +97,3 @@
 	?>
 </body>
 </html>
-<!--
- select a.fk_professor, a.caminho, a.id_arquivo,d.id_disciplina, d.nome
-    from arquivo as a join disciplina as d on a.fk_professor = d.fk_prof join professor as p
-    where p.id_professor = 1
--->
