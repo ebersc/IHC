@@ -52,7 +52,7 @@
 	$query="SELECT `foto` FROM `aluno` where `id_aluno` = $id LIMIT 0, 1";
 	$resultado = mysql_query($query, $conexao);
 	while($linha=mysql_fetch_array($resultado)){
-	  $senha = $linha['foto'];
+	  $foto = $linha['foto'];
 	}
 	
 	echo "<button name='foto' type='file' id='foto_id' alt='Add Foto' style='border-radius: 50%; display: inline-block; height: 200px; width: 200px; margin: 18px; margin-bottom: -5px; margin-top: -8px; border: 14px solid lightblue; cursor: pointer; background-image: url($foto); background-repeat: no-repeat; background-attachment: inerant; background-size: contain'> </button>"?>

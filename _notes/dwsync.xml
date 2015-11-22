@@ -5,9 +5,11 @@
 <file name="loc.css" server="C:/Program Files (x86)/xampp/htdocs/IHC/" local="130914226820000000" remote="130914226820000000" Dst="2" />
 <file name="addUser.png" server="C:/Program Files (x86)/xampp/htdocs/IHC/" local="130916457960000000" remote="130916457960000000" Dst="2" />
 <file name="topo.php" server="C:/Program Files (x86)/xampp/htdocs/IHC/" local="130924601720058545" remote="130924601720000000" Dst="2" />
-<file name="intranet_aluno.php" server="C:/Program Files (x86)/xampp/htdocs/IHC/" local="130925999753478728" remote="130925999750000000" Dst="2" />
+<file name="intranet_aluno.php" server="C:/Program Files (x86)/xampp/htdocs/IHC/" local="130926245333432167" remote="130926245330000000" Dst="2" />
 <file name="alterar_senha.php" server="C:/Program Files (x86)/xampp/htdocs/IHC/" local="130925316410558679" remote="130925316410000000" Dst="2" />
 <file name="estilo.css" server="C:/Program Files (x86)/xampp/htdocs/IHC/" local="130914089680000000" remote="130914089680000000" Dst="2" />
-<file name="index.php" server="C:/Program Files (x86)/xampp/htdocs/IHC/" local="130925170005407757" remote="130925170000000000" Dst="2" />
+<file name="index.php" server="C:/Program Files (x86)/xampp/htdocs/IHC/" local="130926312150049343" remote="130926312150000000" Dst="2" />
 <file name="fim.php" server="C:/Program Files (x86)/xampp/htdocs/IHC/" local="130925169241942496" remote="130925169240000000" Dst="2" />
+<file name="intranet_professor.php" server="C:/Program Files (x86)/xampp/htdocs/IHC/" local="130926313262387735" remote="130926313260000000" Dst="2" />
+<file name="login_professores.php" server="C:/Program Files (x86)/xampp/htdocs/IHC/" local="130926321365652743" remote="130926321360000000" Dst="2" />
 </dwsync>
